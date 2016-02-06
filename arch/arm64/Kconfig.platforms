@@ -141,4 +141,9 @@ config ARCH_ZYNQMP
 	help
 	  This enables support for Xilinx ZynqMP Family
 
+config ARCH_MESON_GXBB
+	bool "Amlogic GxBaby platform"
+	help
+	  This enables support for Amlogic GxBaby platform
+
 endmenu
