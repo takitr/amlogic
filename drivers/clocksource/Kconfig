@@ -68,6 +68,13 @@ config MESON6_TIMER
 	help
 	  Enables the support for the Meson6 timer driver.
 
+config MESONGXBB_TIMER
+	bool "meson gxbay timer support"
+	def_bool n
+	select CLKSRC_OF if OF
+	help
+	  Enables the support for the Meson GxBaby timer driver
+
 config ORION_TIMER
 	bool "Orion timer driver" if COMPILE_TEST
 	depends on ARM
