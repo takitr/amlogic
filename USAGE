@@ -1,0 +1,13 @@
+make ARCH=arm64 mesongxbb_defconfig
+make ARCH=arm64 CROSS_COMPILE=....
+mkimage -A arm64 -O linux -C none -T kernel -a 0x1080000 -e 0x1080000 -d arch/arm64/boot/Image uImage
+cp uImage /usb/memory
+cp arch/arm/boot/dts/amlogic/gxbb-p200.dtb /usb/memory
+
+later in minicom!
+
+usb start
+fatload usb 0 1080000 uImage
+fatload usb 0 1000000 gxbb-p200.dtb
+setenv bootargs earlycon=meson,0xc81004c0
+bootm 1080000 - 1000000
