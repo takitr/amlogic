@@ -69,7 +69,7 @@ config MESON6_TIMER
 	  Enables the support for the Meson6 timer driver.
 
 config MESONGXBB_TIMER
-	bool "meson gxbay timer support"
+	bool "Support for Meson gxbb timer"
 	def_bool n
 	select CLKSRC_OF if OF
 	help

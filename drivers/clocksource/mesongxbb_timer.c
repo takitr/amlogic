@@ -134,7 +134,7 @@ static void __init meson_clocksource_init(void)
 	clocksource_timer_e.shift = 22;
 	clocksource_timer_e.mult = 4194304000u;
 	clocksource_register_khz(&clocksource_timer_e, 1000);
-	setup_sched_clock(meson8_read_sched_clock, 32, USEC_PER_SEC);
+	sched_clock_register(meson8_read_sched_clock, 32, USEC_PER_SEC);
 }
 
 /********** Clock Event Device, Timer-ABCD/FGHI *********/

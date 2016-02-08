@@ -1,4 +1,5 @@
-#include <dt-bindings/clock/gxbb.h>
+#include <dt-bindings/clock/amlogic,gxbb.h>
+#include <dt-bindings/interrupt-controller/arm-gic.h>
 / {
 	cpus {
 		#address-cells = <2>;
@@ -38,13 +39,14 @@
 
 	};
 
-	timer{
+	timer {
 		compatible = "arm, meson-timer";
 		#address-cells = <2>;
 		#size-cells = <2>;
 		ranges;
 		reg=   <0x0 0xc1109990 0x0 0x4 0x0 0xc1109988 0x0 0x4>;
-		timer_f:timer-f{
+
+		timer_f: timer-f{
 			timer_name="MESON TIMER-F";
 			clockevent-rating=<300>;
 			clockevent-shift=<20>;
@@ -55,7 +57,8 @@
 			bit_resolution=<0>;
 			reg=   <0x0 0xc1109994 0x0 0x4>;
 		};
-		timer_g:timer-g{
+
+		timer_g: timer-g{
 			timer_name="MESON TIMER-G";
 			clockevent-rating=<300>;
 			clockevent-shift=<20>;
@@ -66,7 +69,8 @@
 			bit_resolution=<2>;
 			reg=<0x0 0xc1109998 0x0 0x4>;
 		};
-		timer_h:timer-h{
+
+		timer_h: timer-h{
 			timer_name="MESON TIMER-H";
 			clockevent-rating=<300>;
 			clockevent-shift=<20>;
@@ -77,7 +81,8 @@
 			bit_resolution=<4>;
 			reg=<0x0 0xc110999c 0x0 0x4>;
 		};
-		timer_i:timer-i{
+
+		timer_i: timer-i{
 			timer_name="MESON TIMER-I";
 			clockevent-rating=<300>;
 			clockevent-shift=<20>;
@@ -89,6 +94,7 @@
 			reg=<0x0 0xc11099a0 0x0 0x4>;
 		};
 	};
+
 	arm_pmu {
 		compatible = "arm,armv8-pmuv3";
 		interrupts = <0 137 4>,
