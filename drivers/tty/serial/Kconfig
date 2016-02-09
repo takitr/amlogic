@@ -203,7 +203,7 @@ config SERIAL_KS8695_CONSOLE
 
 config SERIAL_MESON
 	tristate "Meson serial port support"
-	depends on ARCH_MESON
+	depends on ARCH_MESON || ARCH_MESON_GXBB
 	select SERIAL_CORE
 	help
 	  This enables the driver for the on-chip UARTs of the Amlogic
